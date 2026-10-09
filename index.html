@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelloWorldle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Coding clue game</p>
+          <h1>HelloWorldle</h1>
+        </div>
+        <button id="newGameButton" class="secondary-btn">New challenge</button>
+      </header>
+
+      <main class="game-layout">
+        <section class="panel game-panel">
+          <div class="status-row">
+            <span id="dailyStamp" class="badge">Today</span>
+            <span id="attemptsLabel" class="badge muted">0 / 6 tries</span>
+          </div>
+
+          <div id="guessBoard" class="guess-board" aria-live="polite"></div>
+
+          <form id="guessForm" class="guess-form">
+            <label for="guessInput" class="sr-only">Guess a coding function</label>
+            <input
+              id="guessInput"
+              list="functionList"
+              type="text"
+              placeholder="Type a function name"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button type="submit">Guess</button>
+          </form>
+
+          <p id="message" class="message" aria-live="polite"></p>
+        </section>
+
+        <aside class="panel sidebar">
+          <h2>Hints</h2>
+
+          <div class="hint-grid">
+            <div class="hint-card" data-hint="language">
+              <span class="hint-label">Language</span>
+              <strong class="hint-value">Locked</strong>
+            </div>
+
+            <div class="hint-card" data-hint="category">
+              <span class="hint-label">Category</span>
+              <strong class="hint-value">Locked</strong>
+            </div>
+
+            <div class="hint-card" data-hint="description">
+              <span class="hint-label">Description</span>
+              <strong class="hint-value">Locked</strong>
+            </div>
+
+            <div class="hint-card" data-hint="length">
+              <span class="hint-label">Length</span>
+              <strong class="hint-value">Locked</strong>
+            </div>
+          </div>
+
+          <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-row">
+              <span class="tile correct">G</span>
+              <span>Correct letter, correct spot</span>
+            </div>
+            <div class="legend-row">
+              <span class="tile present">Y</span>
+              <span>Correct letter, wrong spot</span>
+            </div>
+            <div class="legend-row">
+              <span class="tile absent">X</span>
+              <span>Not in the function</span>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <datalist id="functionList"></datalist>
+
+    <script src="script.js"></script>
+  </body>
+</html>
